@@ -1,8 +1,7 @@
 <template>
   <div class="navbar">
     <a href="#home">Home</a>
-    <a href="#home">Home</a>
-    <a href="#home">News</a>
+    <a href="#news">Home</a>
 
     <div class="dropdown">
       <button class="btn-dropdown">Area de trabalho</button>
@@ -13,6 +12,7 @@
         <a href=".">Link3</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button class="btn-dropdown">Recentes</button>
 
@@ -23,26 +23,33 @@
       </div>
     </div>
 
+    <div class="dropdown">
+      <button class="btn-dropdown">Criar</button>
+
+      <div class="dropdown-content">
+        <a href=".">Link 1</a>
+        <a href=".">Link 2</a>
+        <a href=".">Link3</a>
+      </div>
+    </div>
+
     <div class="search">
       <form action="" class="form-search" method="get">
-        <input
-          type="text"
-          value=""
-          class="inputBusca"
-          placeholder="Digite o que voce procura"
-        />
+        <input type="text" value="" class="inputBusca" placeholder="Digite o que voce procura"/>
         <input type="submit" id="btnBusca" value="Ok" />
         <input type="submit" id="btnSair" value="Sair" />
       </form>
     </div>
   </div>
 
-  <header class="header"></header>
+  <header class="header">
+
+  </header>
 </template>
 
 <script>
 export default {
-  name: "Header",
+  name: "Header"
 };
 </script>
 
@@ -64,7 +71,7 @@ export default {
   font-size: 1rem;
   color: whitesmoke;
   text-align: center;
-  padding: 0.9rem 1rem;
+  padding: 0.875rem 1rem;
   text-decoration: none;
 }
 
