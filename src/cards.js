@@ -1,5 +1,5 @@
 export default {
-  afazer: [
+  aFazer: [
     {
       id: 1,
       text: "Primeira Tarefa",
@@ -20,6 +20,7 @@ export default {
       text: "Primeira Tarefa",
     },
   ],
+
   finalizados: [
     {
       id: 1,
@@ -27,29 +28,30 @@ export default {
     },
     {
       id: 2,
-      text: "Segunda Tarefa",
-    },
-    {
-      id: 3,
-      text: "Terceira Tarefa",
-    },
-    {
-      id: 4,
-      text: "Quarta Tarefa",
-    },
-  ],
-  observacoes: [
-    {
-      id: 1,
       text: "Primeira Tarefa",
     },
     {
+      id: 3,
+      text: "Primeira Tarefa",
+    },
+  ],
+  
+  observacoes: [
+    {
+      id: 1,
+      text: "Tecnica de Futsal",
+    },
+    {
       id: 2,
-      text: "Segunda Tarefa",
+      text: "Preste atenção",
     },
     {
       id: 3,
       text: "Terceira Tarefa",
+    },
+    {
+      id: 5,
+      text: "Quinta Tarefa",
     },
   ],
 };
