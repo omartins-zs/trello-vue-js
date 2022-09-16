@@ -1,8 +1,8 @@
 Nesta vídeo aula iremos começar o nosso projeto re-criando o Trello, iremos setar o projeto com Vue CLI, criar nosso template.
 
-Fonte usada no Projeto : https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkQ3eEt2YWpRMTZ2bHZaeVhUdFcyOWwtNllJd3xBQ3Jtc0tsc0I3VVhLS0c1cjhwbVZtWElQNnFIY0FSeUxWbXhOcERpWUJWbDNMVUMtOW9hTzBLdWc2alRTdnNjdGZrRmcxVExXbEx4RTVNdTBnSEg3QUZfYnpFbTRvaWNHVGl0c1VVYlBScklWWEdoZ2RlV2ExWQ&q=https%3A%2F%2Ffonts.google.com%2Fspecimen%2FMontserrat&v=CoDPtBsGz2s
+Fonte usada no Projeto : https://fonts.google.com/specimen/Montserrat
 
-Seletor de Cores: https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDlveVphNHBoNnU5dkU4LWw5YzAyQXN2T1hvQXxBQ3Jtc0tsWVc2eEFWQ3RId0dFbmxENW5KU1ZGd1RaVExuWV9MdEJ4UUhXZ3h4XzhLWnkwWGdPR1diak1JUWx4TTdtaXZNVGlsVFM5MlZIUDhRSHJiNEx5OFE4WHZjRDhHV20xS2pQMDFZcFZRei1HZExfRmk0WQ&q=https%3A%2F%2Fdeveloper.mozilla.org%2Fpt-BR%2Fdocs%2FWeb%2FCSS%2FCSS_Colors%2FColor_picker_tool&v=CoDPtBsGz2s
+Seletor de Cores: https://htmlcolorcodes.com/
 
 ==================================================
 
@@ -27,6 +27,11 @@ vue create trello-vue-js
 
 npm run serve
 
+
+npm i vue-smooth-dnd
+
+Instalar Biblioteca de Drag-and-drop no Vue 3: 
+npm add vue3-smooth-dnd
 
 
 

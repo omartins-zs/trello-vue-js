@@ -2,27 +2,61 @@
   <div id="app">
     <Header />
     <div class="board">
-
-      
       <div class="quadrado">
-        <h2 class="quadrado-titulo"> A Fazer</h2>
-        <Card v-for="card in cards.aFazer" :key="card.id">{{card.text}}</Card>
+        <h2 class="quadrado-titulo">A Fazer</h2>
+        <Container
+          group-name="trello"
+          @drag-start="handlerDragStart('aFazer', $event)"
+          @drag="handlerDrop"
+          :get-child-payload="getChildPayload"
+        >
+          <Dragable v-for="card in cards.aFazer" :key="card.id">
+            <Card>{{ card.text }}</Card>
+          </Dragable>
+        </Container>
       </div>
 
       <div class="quadrado">
         <h2 class="quadrado-titulo">Fazendo</h2>
-        <Card v-for="card in cards.fazendo" :key="card.id">{{card.text}}</Card>
+        <Container
+          group-name="trello"
+          @drag-start="handlerDragStart('fazendo', $event)"
+          @drag="handlerDrop"
+          :get-child-payload="getChildPayload"
+        >
+          <Dragable v-for="card in cards.fazendo" :key="card.id">
+            <Card>{{ card.text }}</Card>
+          </Dragable>
+        </Container>
       </div>
+
       <div class="quadrado">
         <h2 class="quadrado-titulo">Finalizados</h2>
-        <Card v-for="card in cards.finalizados" :key="card.id">{{card.text}}</Card>
+        <Container
+          group-name="trello"
+          @drag-start="handlerDragStart('finalizados', $event)"
+          @drag="handlerDrop"
+          :get-child-payload="getChildPayload"
+        >
+          <Dragable v-for="card in cards.finalizados" :key="card.id">
+            <Card>{{ card.text }}</Card>
+          </Dragable>
+        </Container>
       </div>
 
       <div class="quadrado">
         <h2 class="quadrado-titulo">Observações</h2>
-        <Card v-for="card in cards.observacoes" :key="card.id">{{card.text}}</Card>
+        <Container
+          group-name="trello"
+          @drag-start="handlerDragStart('observacoes', $event)"
+          @drag="handlerDrop"
+          :get-child-payload="getChildPayload"
+        >
+          <Dragable v-for="card in cards.observacoes" :key="card.id">
+            <Card>{{ card.text }}</Card>
+          </Dragable>
+        </Container>
       </div>
-
     </div>
   </div>
 </template>
@@ -32,8 +66,12 @@ import Header from "./components/Header.vue";
 import Card from "./components/Card.vue";
 import cards from "./cards.js";
 
+// Biblioteca de Drag-and-drop:
+import { Container, Draggable } from "vue-smooth-dnd";
+// import { applyDrag, generateItems } from "./utils";
+
 export default {
-  components: { Header, Card},
+  components: { Header, Card, Container, Draggable },
 
   data: () => ({
     cards: {
@@ -42,7 +80,42 @@ export default {
       finalizados: cards.finalizados,
       observacoes: cards.observacoes,
     },
+
+    // Controle dos Card que estão sendo arrastados no momento
+
+    draggingCard: {
+      lane: "",
+      index: -1, // De onde o Card vem
+      cardData: [],
+    },
   }),
+
+  methods: {
+    // Disparar o evento ao começar a arrastar
+    handlerDragStart(lane, dragResult) {
+      const { payload, isSource } = dragResult; // Drag
+
+      if (isSource) {
+        this.draggingCard = {
+          lane,
+          index: payload.index,
+
+          cardData: {
+            // OS "..." para pegar todos os dados do card
+            ...this.cards[lane][payload.index],
+          },
+        };
+      }
+      console.log(payload.index);
+    },
+    handlerDrop() {},
+    getChildPayload(index) {
+      return {
+        index,
+      };
+    },
+  },
+
   // name: "App"
 };
 </script>
