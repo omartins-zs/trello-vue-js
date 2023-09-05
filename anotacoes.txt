@@ -6,6 +6,8 @@ Seletor de Cores: https://htmlcolorcodes.com/
 
 ==================================================
 
+Playlist Tutorial: https://youtube.com/playlist?list=PLFYSYBoGvrksXcMiWPDM50P51pz7pJr_A&si=dI_Sq7XdoIyYWEQL
+
 Documentação VueJS: 
 
 https://vuejs.org/
